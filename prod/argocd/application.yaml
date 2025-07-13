@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/phuocnmbkdn/repo-gke-x-manifest-live.git
-    targetRevision: create-argocd
+    targetRevision: main
     path: prod/argocd
     helm:
       valueFiles:
