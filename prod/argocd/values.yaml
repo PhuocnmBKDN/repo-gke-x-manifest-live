@@ -1,0 +1,15 @@
+controller:
+  replicas: 2
+
+server:
+  service:
+    type: LoadBalancer
+  ingress:
+    enabled: false
+
+applicationSet:
+  enabled: true
+
+configs:
+  params:
+    server.insecure: false
