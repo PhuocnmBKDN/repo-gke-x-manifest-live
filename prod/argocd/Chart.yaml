@@ -1,0 +1,10 @@
+apiVersion: v2
+name: argo-deploy
+version: 0.1.0
+description: Deploy Argo CD via OCI chart and GitOps
+type: application
+
+dependencies:
+  - name: argo-cd
+    version: 5.52.1
+    repository: oci://ghcr.io/argoproj/argo-helm

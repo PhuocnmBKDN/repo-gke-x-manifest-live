@@ -1,5 +1,0 @@
-apiVersion: v2
-name: argo-cd
-version: 0.1.0
-description: Wrapper chart for Argo CD managed via OCI Helm chart
-type: application

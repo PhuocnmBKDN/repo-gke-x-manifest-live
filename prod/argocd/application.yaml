@@ -5,25 +5,19 @@ metadata:
   namespace: argocd
 spec:
   project: default
-
   source:
     repoURL: https://github.com/phuocnmbkdn/repo-gke-x-manifest-live.git
     targetRevision: create-argocd
     path: prod/argocd
-    chart: argo-cd
     helm:
       valueFiles:
-        - values-prod.yaml
-    repoURL: oci://ghcr.io/argoproj/argo-helm   # <- nơi chứa chart argo-cd
-    targetRevision: 5.52.1                       # <- version của chart muốn dùng
-
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
-
   syncPolicy:
     automated:
-      selfHeal: true
       prune: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
