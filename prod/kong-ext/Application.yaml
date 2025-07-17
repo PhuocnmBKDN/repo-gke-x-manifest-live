@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kong-ext
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/PhuocnmBKDN/repo-gke-x-manifest-live.git
+    targetRevision: main
+    path: prod/kong-ext
+    helm:
+      skipCrds: false
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kong-ext
+
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
